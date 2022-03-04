@@ -11,7 +11,6 @@ router.get("/receivers", (req, res, next) => {
     .catch((err) => res.json(err));
 });
 
-
 //  POST /api/receiver  -  Creates a new receiver
 router.post("/receiver", (req, res, next) => {
   const {
@@ -31,7 +30,7 @@ router.post("/receiver", (req, res, next) => {
     askingAmount,
     receivedAmount,
     currency,
-    imageURL
+    imageURL,
   })
     .then((response) => res.json(response))
     .catch((err) => res.json(err));
@@ -41,21 +40,19 @@ router.post("/receiver", (req, res, next) => {
 router.get("/receivers/:receiverId", (req, res, next) => {
   const { receiverId } = req.params;
 
- 
   if (!mongoose.Types.ObjectId.isValid(receiverId)) {
-    res.status(400).json({ message: 'Specified id is not valid' });
+    res.status(400).json({ message: "Specified id is not valid" });
     return;
   }
- 
+
   // Each Project document has `tasks` array holding `_id`s of Task documents
   // We use .populate() method to get swap the `_id`s for the actual Task documents
   Receiver.findById(receiverId)
     // .populate('tasks')
-    .then(receiver => res.status(200).json(receiver))
-    .catch(error => res.json(error));
+    .then((receiver) => res.status(200).json(receiver))
+    .catch((error) => res.json(error));
 });
- 
- 
+
 // PUT  /api/receivers/:receiverId  -  Updates a specific receiver by id
 router.put("/receivers/:receiverId", (req, res, next) => {
   const { receiverId } = req.params;
@@ -69,8 +66,7 @@ router.put("/receivers/:receiverId", (req, res, next) => {
     .then((updatedReceiver) => res.json(updatedReceiver))
     .catch((error) => res.json(error));
 });
- 
- 
+
 // DELETE  /api/receivers/:receiverId  -  Deletes a specific receiver by id
 router.delete("/receivers/:receiverId", (req, res, next) => {
   const { receiverId } = req.params;
