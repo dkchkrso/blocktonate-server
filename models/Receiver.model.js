@@ -8,8 +8,8 @@ const receiverSchema = new Schema({
   askingAmount: Number,
   receivedAmount: Number,
   currency: String,
-  //   categories: [{ type: Schema.Types.ObjectId, ref: "Category" }],
   imageURL: String,
+  //categories: [{ type: Schema.Types.ObjectId, ref: "Category" }],
   // geoRegion: String + Enum
 });
 
