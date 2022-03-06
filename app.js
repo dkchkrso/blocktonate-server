@@ -22,7 +22,10 @@ const allRoutes = require("./routes/index.routes");
 app.use("/api", allRoutes);
 
 const receiverRouter = require("./routes/receiver.routes");
-app.use("/api", isAuthenticated, receiverRouter); 
+app.use("/api", isAuthenticated, receiverRouter);
+
+const nftRouter = require("./routes/nft.routes");
+app.use("/api", isAuthenticated, nftRouter);
 
 const authRouter = require("./routes/auth.routes");
 app.use("/auth", authRouter);  

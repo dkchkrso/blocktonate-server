@@ -5,7 +5,8 @@ const { Schema, model } = mongoose;
 const NFTSchema = new Schema({
   title: String,
   description: String,
-  user: { type: Schema.Types.ObjectId, ref: "User" },
+  imageURL: String,
+  users: { type: Schema.Types.ObjectId, ref: "User" },
 });
 
-module.exports = model("NFT", taskSchema);
+module.exports = model("NFT", NFTSchema);

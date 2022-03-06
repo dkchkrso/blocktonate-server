@@ -48,7 +48,7 @@ router.get("/receivers/:receiverId", (req, res, next) => {
   // Each Project document has `tasks` array holding `_id`s of Task documents
   // We use .populate() method to get swap the `_id`s for the actual Task documents
   Receiver.findById(receiverId)
-    // .populate('tasks')
+    //.populate('tasks')
     .then((receiver) => res.status(200).json(receiver))
     .catch((error) => res.json(error));
 });

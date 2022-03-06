@@ -9,8 +9,8 @@ const userSchema = new Schema({
   profilePic: { type: String },
   supported: [{ type: Schema.Types.ObjectId, ref: "Receiver" }],
   supporterFav: [{ type: Schema.Types.ObjectId, ref: "Receiver" }],
-  Contributed: { type: Number },
-  NFTs: [{ type: Schema.Types.ObjectId, ref: "NFT" }],
+  contributed: { type: Number },
+  nfts: [{ type: Schema.Types.ObjectId, ref: "NFT" }],
 });
 
 module.exports = model("User", userSchema);
