@@ -27,6 +27,12 @@ app.use("/api", isAuthenticated, receiverRouter);
 const nftRouter = require("./routes/nft.routes");
 app.use("/api", isAuthenticated, nftRouter);
 
+// const userRouter = require("./routes/user.routes");
+// app.use("/api", userRouter);
+
+// const userRouter = require("./routes/user.routes");
+// app.use("/api", isAuthenticated, userRouter);
+
 const authRouter = require("./routes/auth.routes");
 app.use("/auth", authRouter);  
 

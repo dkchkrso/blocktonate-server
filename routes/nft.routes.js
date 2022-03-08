@@ -13,17 +13,12 @@ router.get("/nfts", (req, res, next) => {
 
 //  POST /api/nft  -  Creates a new nft
 router.post("/nft", (req, res, next) => {
-  const {
-    title,
-    description,
-    user,
-  } = req.body;
+  const { title, description, imageURL } = req.body;
 
   NFT.create({
     title,
     description,
     imageURL,
-    user,
   })
     .then((response) => res.json(response))
     .catch((err) => res.json(err));

@@ -5,9 +5,13 @@ const Receiver = require("../models/Receiver.model");
 
 // GET /api/receivers -  Retrieves all of the receivers
 router.get("/receivers", (req, res, next) => {
+  console.log("test");
   Receiver.find()
     // .populate('tasks')
-    .then((allReceivers) => res.json(allReceivers))
+    .then((allReceivers) => {
+      console.log(allReceivers);
+      res.json(allReceivers);
+    })
     .catch((err) => res.json(err));
 });
 
