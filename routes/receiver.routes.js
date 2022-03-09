@@ -7,7 +7,7 @@ const Receiver = require("../models/Receiver.model");
 router.get("/receivers", (req, res, next) => {
   console.log("test");
   Receiver.find()
-    // .populate('tasks')
+    // .populate('NFTs')
     .then((allReceivers) => {
       console.log(allReceivers);
       res.json(allReceivers);
