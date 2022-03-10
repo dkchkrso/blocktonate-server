@@ -2,8 +2,6 @@ const router = require("express").Router();
 const mongoose = require("mongoose");
 
 
-
-
 const User = require("../models/User.model");
 
 // // GET /api/users -  Retrieves all of the users
